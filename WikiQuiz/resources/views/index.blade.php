@@ -462,6 +462,91 @@
             </div>
         </div>
     </section>
+    <!-- TESTIMONIALS -->
+    <section class="py-18 px-4 bg-white">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-slate-800">See What Others Think</h2>
+                <p class="text-xl text-slate-700 mt-1">Don't Just Take Our Word for It <br> See what other curious minds have to say about WikiQuiz</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Actually learned something new</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"I quizzed myself on the Roman Empire and realized I knew way less than I thought. Came back three times to beat my score."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">JM</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">James M.</p>
+                            <p class="text-xs text-gray-400">History enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Perfect for studying</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"I use this before exams to quickly test myself on Wikipedia articles. No account, no setup — just paste and quiz. Exactly what I needed."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">SR</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Sofia R.</p>
+                            <p class="text-xs text-gray-400">University student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Solid and no nonsense</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"Most quiz tools are bloated or want you to sign up for something. WikiQuiz just works. Clean, fast, and the questions are actually good."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">TL</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Thomas L.</p>
+                            <p class="text-xs text-gray-400">Graphic designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Great for trivia nights</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"My friends and I use WikiQuiz to prep for pub trivia. You can pick any topic and get a quiz instantly — it's become part of our weekly routine."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">LB</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Lana B.</p>
+                            <p class="text-xs text-gray-400">Trivia night regular</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">Surprisingly addictive</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"Started with one article about black holes and ended up quizzing myself on five different topics. The random article button is dangerous."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">AM</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Alex M.</p>
+                            <p class="text-xs text-gray-400">Science nerd</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-gray-900">No AI hallucinations</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed flex-1">"The fact that questions come directly from Wikipedia and not from an AI making things up is a huge plus for me. I can actually trust the answers."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs font-medium shrink-0">JF</div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">Joseph F.</p>
+                            <p class="text-xs text-gray-400">React developer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
