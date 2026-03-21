@@ -116,7 +116,7 @@
         <div class="bg-gradient-to-b from-slate-50/20 to-transparent dark:from-slate-900/10 w-full h-full absolute inset-0"></div>
     </section>
     <!-- CARDS -->
-    <section class="py-12 px-4 bg-white ">
+    <section class="py-18 px-4 bg-white ">
         <div class="max-w-screen-xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="text-4xl font-bold text-slate-800">Trending topics in Wikipedia</h2>
@@ -186,7 +186,7 @@
         </div>
     </section>
     <!-- FEATURES -->
-    <section class="py-12 px-4 bg-white">
+    <section class="py-18 px-4 bg-white">
         <div class="max-w-screen-xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="text-4xl font-bold text-slate-800">Key Features</h2>
@@ -269,6 +269,194 @@
                         <h3 class="text-base font-semibold text-gray-900 mb-1">Completely Free</h3>
                         <p class="text-xs text-gray-500 leading-relaxed">WikiQuiz is and will always be free to use. No premium tier, no paywalls, no ads. Just a clean, honest quiz tool for curious people.</p>
                     </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- STATISTICS -->
+    <section class="py-18 px-4 bg-white">
+        <div class="max-w-screen-xl relative mx-auto">
+            <div class="absolute overflow-hidden inset-0">
+                <svg width="1405" height="558" viewBox="0 0 1405 558" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="58.5834" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="339.333" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="0.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="90.5" y="526.5" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="180.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="152.167" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="270.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="339.333" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="360.5" y="526.5" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="-35" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="450.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="58.5834" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="339.333" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="540.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="152.167" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="245.75" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="432.917" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="630.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="720.5" y="245.75" width="90" height="93.5833" fill="#6B7280" fill-opacity="0.05" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="720.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="720.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="720.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="810.5" y="339.333" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="810.5" y="432.917" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <rect x="810.5" y="526.5" width="90" height="93.5833" stroke="#6B7280" stroke-opacity="0.2" />
+                    <ellipse cx="540.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" />
+                    <ellipse cx="528.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="516.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="504.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="492.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.6" />
+                    <ellipse cx="480.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="468.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="456.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="444.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="432.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="420.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="1118.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" />
+                    <ellipse cx="1106.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="1094.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="1082.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="1070.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.6" />
+                    <ellipse cx="1058.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="1046.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="1034.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="1022.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="1010.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="998.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="798.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="786.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="762.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="750.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="726.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="714.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="702.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="136.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="124.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="100.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="88.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="64.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="52.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="40.5" cy="432.917" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="957.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="945.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="921.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="909.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="885.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="873.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="861.5" cy="339.333" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="567.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" />
+                    <ellipse cx="555.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="543.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="531.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="519.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.6" />
+                    <ellipse cx="507.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.5" />
+                    <ellipse cx="495.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.4" />
+                    <ellipse cx="483.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="471.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="459.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="447.5" cy="152.167" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="829.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" />
+                    <ellipse cx="817.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="805.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="793.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.7" />
+                    <ellipse cx="781.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.6" />
+                    <ellipse cx="745.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.3" />
+                    <ellipse cx="721.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.2" />
+                    <ellipse cx="709.5" cy="105.375" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.1" />
+                    <ellipse cx="282.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" />
+                    <ellipse cx="270.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="258.5" cy="526.5" rx="3" ry="3.11944" fill="#6B7280" fill-opacity="0.8" />
+                    <ellipse cx="977.5" cy="555.615" rx="3.11944" ry="3" transform="rotate(-90 977.5 555.615)" fill="#6B7280" />
+                    <ellipse cx="468.5" cy="526.5" rx="3.11944" ry="3" transform="rotate(-90 468.5 526.5)" fill="#6B7280" />
+                    <ellipse cx="630.5" cy="245.75" rx="3.11944" ry="3" transform="rotate(-90 630.5 245.75)" fill="#6B7280" />
+                    <ellipse cx="863.5" cy="152.167" rx="3.11944" ry="3" transform="rotate(-90 863.5 152.167)" fill="#6B7280" />
+                    <ellipse cx="1177.5" cy="205.197" rx="3.11944" ry="3" transform="rotate(-90 1177.5 205.197)" fill="#6B7280" />
+                    <ellipse cx="270.5" cy="386.125" rx="3.11944" ry="3" transform="rotate(-90 270.5 386.125)" fill="#6B7280" />
+                    <ellipse cx="3.11944" cy="3" rx="3.11944" ry="3" transform="matrix(-4.0428e-08 1 1 4.72614e-08 177.5 319.577)" fill="#6B7280" />
+                    <ellipse cx="3.11944" cy="3" rx="3.11944" ry="3" transform="matrix(-4.0428e-08 1 1 4.72614e-08 177.5 307.099)" fill="#6B7280" fill-opacity="0.9" />
+                    <ellipse cx="3.11944" cy="3" rx="3.11944" ry="3" transform="matrix(-4.20377e-08 1 1 4.54517e-08 177.5 294.621)" fill="#6B7280" fill-opacity="0.8" />
+                    <path d="M901 339.333H1003.5V205.717H1178" stroke="#6B7280" stroke-opacity="0.2" />
+                    <path d="M720.5 152.167H863.334V205.197H945" stroke="#6B7280" stroke-opacity="0.2" />
+                    <path d="M901 526.5H977.5V666.875H1404.5" stroke="#6B7280" stroke-opacity="0.2" />
+                    <path d="M1327 713.667H900.5V573.292H584.5V433.437" stroke="#6B7280" stroke-opacity="0.2" />
+                    <path d="M1327 -35.0001H900.5V105.375H584.5V245.23" stroke="#6B7280" stroke-opacity="0.2" />
+                    <path d="M901 432.917H1147V313.338H1315.5" stroke="#6B7280" stroke-opacity="0.2" />
+                </svg>
+            </div>
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-slate-800">Knowledge Has No Limit</h2>
+                <p class="text-xl text-slate-700 mt-1">Wikipedia has been built by millions of people over decades. We turned that into <br> your personal study tool </p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-y-10 gap-x-6 max-w-2xl mx-auto">
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">6M+</p>
+                    <p class="text-md text-slate-500 mt-1">English articles</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">100M+</p>
+                    <p class="text-md text-slate-500 mt-1">Monthly Wikipedia readers</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">1000s</p>
+                    <p class="text-md text-slate-500 mt-1">Topics to quiz on</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">3</p>
+                    <p class="text-md text-slate-500 mt-1">Question types</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">0</p>
+                    <p class="text-md text-slate-500 mt-1">Accounts needed</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">100%</p>
+                    <p class="text-md text-slate-500 mt-1">Free forever</p>
                 </div>
 
             </div>
