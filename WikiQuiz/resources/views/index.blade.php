@@ -138,20 +138,6 @@
                     </div>
                 </div>
 
-                
-                <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
-                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
-                        <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <div class="p-4 flex flex-col gap-3 flex-1">
-                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
-                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
-                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
-                    </div>
-                </div>
 
                 <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
                     <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
@@ -181,6 +167,109 @@
                     </div>
                 </div>
 
+                <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
+                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
+                        <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <div class="p-4 flex flex-col gap-3 flex-1">
+                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
+                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
+                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- FEATURES -->
+    <section class="py-12 px-4 bg-white">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-slate-800">Key Features</h2>
+                <p class="text-xl text-slate-700 mt-1">WikiQuiz is built to be fast, simple, and accessible</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div class="bg-slate-700 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="7" y="2" width="10" height="20" rx="2" />
+                            <path d="M12 18h.01" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Mobile Friendly</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">WikiQuiz works beautifully on any screen — phone, tablet, or desktop. Whether you're on the bus or at your desk, your quiz is always one tap away.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4" />
+                            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-gray-900 mb-1">No Account Needed</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">No sign-ups, no emails, no passwords. Open WikiQuiz, search a topic, and start quizzing in seconds — completely hassle free.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-700 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Straight from Wikipedia</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">Every single question is generated directly from the Wikipedia article you choose. No AI making things up — just pure, sourced information.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-gray-900 mb-1">Instant Results</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">Get your score the moment you finish. See which questions you got right, which you missed, and what the correct answers were.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-700 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-white mb-1">Millions of Topics</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">From ancient civilizations to pop culture, science to sports — with over 6 million English articles on Wikipedia, you'll never run out of things to learn.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 rounded-xl p-6 flex flex-col gap-4">
+                    <div class="w-8 h-8 text-slate-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-gray-900 mb-1">Completely Free</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">WikiQuiz is and will always be free to use. No premium tier, no paywalls, no ads. Just a clean, honest quiz tool for curious people.</p>
+                    </div>
+                </div>
 
             </div>
         </div>
