@@ -58,8 +58,8 @@
                 <span class="self-center text-xl text-slate-600 font-semibold whitespace-nowrap">WikiQuiz</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Get started</button>
-                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-md md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
+                <button type="button" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-md md:hidden hover:bg-neutral-secondary-soft hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
@@ -72,19 +72,19 @@
                         <a href="#" class="block py-2 px-3 text-white bg-slate-600 rounded-sm md:bg-transparent md:text-slate-600 md:p-0" aria-current="page">Trending</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Paste-link</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Paste-link</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -101,14 +101,14 @@
             <h1 class="mb-6 text-4xl font-bold tracking-tighter text-slate-800 md:text-5xl lg:text-6xl">Turn any Wikipedia article into a quiz</h1>
             <p class="mb-8 text-md font-normal text-slate-700 md:text-xl">How well do you actually know what you just read?</br> WikiQuiz turns any Wikipedia article into a quiz in seconds.</p>
             <form class="max-w-md mx-auto">
-                <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Search</label>
+                <label for="search" class="block mb-2.5 text-sm font-medium text-slate-900 sr-only ">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-slate-600 text-heading text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 shadow-xs placeholder:text-slate-600" placeholder="Paste wikipedia link here" required />
+                    <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-slate-600 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 shadow-xs placeholder:text-slate-600" placeholder="Paste wikipedia link here" required />
                     <button type="button" class="absolute end-1.5 bottom-1.5 text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Paste Link</button>
                 </div>
             </form>
@@ -547,6 +547,23 @@
             </div>
         </div>
     </section>
+    <!-- CTA -->
+    <section class="bg-neutral-primary bg-slate-100 py-16 px-4">
+        <div class="py-8 px-4 mx-auto max-w-screen-2xl text-center lg:py-16">
+            <h1 class="mb-6 text-4xl font-bold tracking-tighter text-slate-900 md:text-5xl lg:text-6xl">What will you learn today?</h1>
+            <p class="mb-8 text-base font-normal text-slate-700 md:text-xl">Type any topic into the search bar, paste a Wikipedia link, or let us pick one for you. <br> Your next quiz is one search away.</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
+                <button type="button" class="inline-flex items-center justify-center text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium rounded-md text-base px-5 py-3 focus:outline-none">
+                    Getting started
+                    <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                    </svg>
+                </button>
+                <button type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-slate-900 focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-md text-base px-5 py-3 focus:outline-none">Learn more</button>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>
