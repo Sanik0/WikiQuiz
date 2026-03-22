@@ -120,6 +120,7 @@
                 </svg>
                 Start Quiz
             </button>
+
         </div>
     </div>
 
@@ -158,7 +159,7 @@
             document.getElementById('tab-quiz').classList.remove('text-gray-500');
             document.getElementById('tab-article').classList.remove('bg-slate-700', 'text-white', 'whitespace-no-wrap');
             document.getElementById('tab-article').classList.add('text-gray-500');
-            window.location.href = '/quiz';
+            window.location.href = '/quiz/' + encodeURIComponent(title);
         }
     </script>
     <!-- FOOTER -->
