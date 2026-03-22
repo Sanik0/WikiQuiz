@@ -182,7 +182,7 @@
         <div class="bg-gradient-to-b from-slate-50/20 to-transparent dark:from-slate-900/10 w-full h-full absolute inset-0"></div>
     </section>
     <!-- CARDS -->
-    <section class="py-18 px-4 bg-white ">
+    <section class="py-18 px-4 bg-white">
         <div class="max-w-screen-xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="text-4xl font-bold text-slate-800">Trending topics in Wikipedia</h2>
@@ -190,64 +190,30 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach($trending as $article)
                 <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
-                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
+                    <div class="h-36 flex items-center justify-center border-b border-gray-200 overflow-hidden bg-gray-100">
+                        @if($article['thumbnail'])
+                        <img src="{{ $article['thumbnail'] }}"
+                            alt="{{ $article['title'] }}"
+                            class="w-full h-full object-cover">
+                        @else
                         <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <rect x="3" y="3" width="18" height="18" rx="2" />
                             <path d="M3 9h18M9 21V9" />
                         </svg>
+                        @endif
                     </div>
                     <div class="p-4 flex flex-col gap-3 flex-1">
-                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
-                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
-                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
+                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Trending</span>
+                        <p class="text-sm font-medium text-gray-900 flex-1">{{ $article['title'] }}</p>
+                        <p class="text-xs text-gray-500">{{ Str::limit($article['description'], 60) }}</p>
+                        <a href="/article/{{ urlencode($article['slug']) }}" class="w-full py-2 text-sm bg-slate-600 hover:bg-slate-700 text-white rounded-lg text-center">
+                            Start reading
+                        </a>
                     </div>
                 </div>
-
-
-                <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
-                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
-                        <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <div class="p-4 flex flex-col gap-3 flex-1">
-                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
-                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
-                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
-                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
-                        <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <div class="p-4 flex flex-col gap-3 flex-1">
-                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
-                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
-                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-300 rounded-xl overflow-hidden flex flex-col">
-                    <div class="bg-gray-100 h-36 flex items-center justify-center border-b border-gray-200">
-                        <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18M9 21V9" />
-                        </svg>
-                    </div>
-                    <div class="p-4 flex flex-col gap-3 flex-1">
-                        <span class="text-xs bg-slate-600 text-white rounded-full px-2 py-0.5 w-fit">Science</span>
-                        <p class="text-md font-medium text-gray-900">Psilocybin mushroom</p>
-                        <button class="w-full py-2 text-md bg-slate-600 hover:bg-slate-700 text-white rounded-lg">Start reading</button>
-                    </div>
-                </div>
-
-
+                @endforeach
             </div>
         </div>
     </section>

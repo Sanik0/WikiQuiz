@@ -126,15 +126,16 @@
 
     <script>
         const title = "{{ $title }}";
+        const formattedTitle = title.replace(/\+/g, '_').replace(/ /g, '_');
 
-        fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`)
+        fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${formattedTitle}`)
             .then(res => res.json())
             .then(data => {
                 document.getElementById('wiki-title').textContent = data.title;
                 document.title = data.title + ' - WikiQuiz';
             });
 
-        fetch(`https://en.wikipedia.org/api/rest_v1/page/html/${title}`)
+        fetch(`https://en.wikipedia.org/api/rest_v1/page/html/${formattedTitle}`)
             .then(res => res.text())
             .then(html => {
                 const container = document.getElementById('wiki-content');
