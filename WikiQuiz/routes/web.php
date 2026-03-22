@@ -17,3 +17,6 @@ Route::get('/article', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 })->name('quiz');
+Route::get('/article/{title}', function ($title) {
+    return view('article', ['title' => $title]);
+})->name('article');

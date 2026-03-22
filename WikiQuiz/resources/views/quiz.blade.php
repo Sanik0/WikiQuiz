@@ -70,11 +70,11 @@
     {{-- Progress Bar --}}
     <div class="max-w-2xl mx-auto px-4 mt-8">
         <div class="flex items-center gap-3 mb-8">
-            <span class="text-xs text-gray-400" id="progress-start">1</span>
+            <span class="text-sm text-gray-400" id="progress-start">1</span>
             <div class="flex-1 bg-gray-200 rounded-full h-1.5">
                 <div class="bg-slate-700 h-1.5 rounded-full transition-all duration-300" id="progress-bar" style="width: 25%"></div>
             </div>
-            <span class="text-xs text-gray-400" id="progress-end">10</span>
+            <span class="text-sm text-gray-400" id="progress-end">10</span>
         </div>
 
         {{-- Question Card --}}
@@ -112,7 +112,7 @@
         </div>
 
         {{-- Question Counter --}}
-        <p class="text-center text-xs text-gray-400 mt-4" id="question-counter">Question 1 of 10</p>
+        <p class="text-center text-sm text-gray-400 mt-4" id="question-counter">Question 1 of 10</p>
 
     </div>
 

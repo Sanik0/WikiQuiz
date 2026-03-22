@@ -100,18 +100,84 @@
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
             <h1 class="mb-6 text-4xl font-bold tracking-tighter text-slate-800 md:text-5xl lg:text-6xl">Turn any Wikipedia article into a quiz</h1>
             <p class="mb-8 text-md font-normal text-slate-700 md:text-xl">How well do you actually know what you just read?</br> WikiQuiz turns any Wikipedia article into a quiz in seconds.</p>
-            <form class="max-w-md mx-auto">
-                <label for="search" class="block mb-2.5 text-sm font-medium text-slate-900 sr-only ">Search</label>
+            <form class="max-w-md mx-auto" onsubmit="handleSearch(event)">
+                <label for="search" class="block mb-2.5 text-sm font-medium text-slate-900 sr-only">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-                    <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-slate-600 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 shadow-xs placeholder:text-slate-600" placeholder="Paste wikipedia link here" required />
-                    <button type="button" class="absolute end-1.5 bottom-1.5 text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Paste Link</button>
+                    <input type="search" id="search" class="block w-full p-3 ps-9 bg-neutral-secondary-medium border border-slate-600 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 shadow-xs placeholder:text-slate-600" placeholder="Paste wikipedia link here" />
+                    <button type="submit" class="absolute end-1.5 bottom-1.5 text-white bg-slate-600 hover:bg-slate-700 border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded text-xs px-3 py-1.5 focus:outline-none">Search Article</button>
                 </div>
+                <p class="text-red-500 text-xs mt-2 hidden" id="search-error"></p>
             </form>
+
+            <script>
+                function handleSearch(e) {
+                    e.preventDefault();
+                    const input = document.getElementById('search').value.trim();
+                    const error = document.getElementById('search-error');
+                    const inputEl = document.getElementById('search');
+
+                    error.classList.add('hidden');
+                    error.textContent = '';
+                    inputEl.classList.remove('border-red-500');
+
+                    if (!input) {
+                        showError('Please paste a Wikipedia link first.');
+                        return;
+                    }
+
+                    try {
+                        const url = new URL(input);
+
+                        if (!url.hostname.includes('wikipedia.org')) {
+                            showError('Only Wikipedia links are accepted. e.g. https://en.wikipedia.org/wiki/Topic');
+                            return;
+                        }
+
+                        const parts = url.pathname.split('/');
+                        const wikiIndex = parts.indexOf('wiki');
+
+                        if (wikiIndex === -1 || !parts[wikiIndex + 1]) {
+                            showError('Could not find an article in this link. Make sure it points to a Wikipedia article.');
+                            return;
+                        }
+
+                        const title = parts[wikiIndex + 1];
+                        window.location.href = '/article/' + encodeURIComponent(title);
+
+                    } catch {
+                        showError('That doesn\'t look like a valid URL. Please paste a full Wikipedia link.');
+                    }
+                }
+
+                function showError(message) {
+                    const error = document.getElementById('search-error');
+                    const inputEl = document.getElementById('search');
+                    error.textContent = message;
+                    error.classList.remove('hidden');
+                    inputEl.classList.add('border-red-500');
+                }
+
+                document.getElementById('search').addEventListener('paste', function(e) {
+                    setTimeout(() => {
+                        document.getElementById('search-error').classList.add('hidden');
+                        this.classList.remove('border-red-500');
+                    }, 100);
+                });
+
+                async function pasteFromClipboard() {
+                    try {
+                        const text = await navigator.clipboard.readText();
+                        document.getElementById('search').value = text;
+                    } catch {
+                        showError('Could not access clipboard. Please paste manually using Ctrl+V.');
+                    }
+                }
+            </script>
         </div>
         <div class="bg-gradient-to-b from-slate-50/20 to-transparent dark:from-slate-900/10 w-full h-full absolute inset-0"></div>
     </section>

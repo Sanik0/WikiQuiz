@@ -124,13 +124,16 @@
     </div>
 
     <script>
-        fetch('https://en.wikipedia.org/api/rest_v1/page/summary/Psilocybin_mushroom')
+        const title = "{{ $title }}";
+
+        fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`)
             .then(res => res.json())
             .then(data => {
                 document.getElementById('wiki-title').textContent = data.title;
+                document.title = data.title + ' - WikiQuiz';
             });
 
-        fetch('https://en.wikipedia.org/api/rest_v1/page/html/Psilocybin_mushroom')
+        fetch(`https://en.wikipedia.org/api/rest_v1/page/html/${title}`)
             .then(res => res.text())
             .then(html => {
                 const container = document.getElementById('wiki-content');
