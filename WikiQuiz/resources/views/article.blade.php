@@ -69,7 +69,7 @@
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-md bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
                     <li>
-                        <a href="#" class="block py-2 px-3 text-white bg-slate-600 rounded-sm md:bg-transparent md:text-slate-600 md:p-0" aria-current="page">Trending</a>
+                        <a href="#" class="block py-2 px-3 text-slate-900 roundedhover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                     </li>
                     <li>
                         <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Paste-link</a>
@@ -212,10 +212,10 @@
                 <div class="items-center justify-between w-full md:w-auto md:order-1">
                     <ul class="flex flex-wrap flex-row gap-2 md:gap-10">
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
+                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Paste-link</a>
+                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
                         </li>
                         <li>
                             <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
