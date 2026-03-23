@@ -25,8 +25,27 @@
         </button>
     </nav>
 
+    {{-- Question Count Selector --}}
+    <div id="setup-screen" class="max-w-md mx-auto px-4 mt-20 text-center">
+        <h2 class="text-xl font-semibold text-gray-900 mb-2">How many questions?</h2>
+        <p class="text-sm text-gray-500 mb-8">Choose how long you want your quiz to be.</p>
+
+        <div class="grid grid-cols-5 gap-3 mb-8">
+            @foreach([10, 15, 20, 30, 50] as $count)
+            <button onclick="selectCount(this, {{ $count }})"
+                class="count-btn py-3 text-sm font-medium border border-gray-200 rounded-xl text-gray-600 hover:border-slate-600 hover:text-slate-700 hover:bg-slate-50 transition-all">
+                {{ $count }}
+            </button>
+            @endforeach
+        </div>
+
+        <button onclick="beginQuiz()" id="begin-btn" class="w-full bg-slate-700 hover:bg-slate-800 text-white text-sm font-medium px-6 py-3 rounded-xl transition-all opacity-50 cursor-not-allowed" disabled>
+            Start Quiz →
+        </button>
+    </div>
+
     {{-- Loading State --}}
-    <div id="loading" class="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+    <div id="loading" class="hidden flex flex-col items-center justify-center min-h-[60vh] gap-4">
         <svg class="animate-spin w-8 h-8 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12a9 9 0 1 1-6.219-8.56" />
         </svg>
@@ -70,11 +89,6 @@
                 </div>
             </div>
             <div class="p-6 text-center border-b border-gray-100">
-                <div class="w-16 h-16 rounded-full border-2 border-gray-200 flex items-center justify-center mx-auto mb-4 bg-gray-50">
-                    <svg class="w-7 h-7 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-                    </svg>
-                </div>
                 <p class="text-3xl font-semibold text-gray-900" id="result-score"></p>
                 <p class="text-sm text-gray-500 mt-1" id="result-sub"></p>
             </div>
@@ -107,34 +121,57 @@
         let current = 0;
         let score = 0;
         let selected = null;
+        let questionCount = null;
+
+        function selectCount(el, count) {
+            document.querySelectorAll('.count-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-700', 'text-white', 'border-slate-700');
+                btn.classList.add('border-gray-200', 'text-gray-600');
+            });
+            el.classList.add('bg-slate-700', 'text-white', 'border-slate-700');
+            el.classList.remove('border-gray-200', 'text-gray-600');
+            questionCount = count;
+
+            const beginBtn = document.getElementById('begin-btn');
+            beginBtn.disabled = false;
+            beginBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function beginQuiz() {
+            if (!questionCount) return;
+            document.getElementById('setup-screen').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            fetchAndGenerateQuiz();
+        }
 
         async function fetchAndGenerateQuiz() {
             try {
-                const res = await fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${title}&prop=extracts&explaintext=true&format=json&origin=*`);
+                const formattedTitle = title.replace(/\+/g, '_').replace(/ /g, '_');
+                const res = await fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${formattedTitle}&prop=extracts&explaintext=true&format=json&origin=*`);
                 const data = await res.json();
                 const pages = data.query.pages;
                 const page = pages[Object.keys(pages)[0]];
                 const text = page.extract;
 
-                questions = generateQuestions(text);
+                questions = generateQuestions(text, questionCount);
 
                 if (questions.length < 5) {
-                    document.getElementById('loading').innerHTML = '<p class="text-sm text-red-500">Not enough content to generate a quiz for this article. Try a longer article.</p>';
+                    document.getElementById('loading').innerHTML = '<p class="text-sm text-red-500 text-center mt-20">Not enough content to generate a quiz for this article. Try a longer article.</p>';
                     return;
                 }
 
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('quiz-container').classList.remove('hidden');
                 document.getElementById('progress-total').textContent = questions.length;
-                document.getElementById('result-title').textContent = decodeURIComponent(title).replace(/_/g, ' ');
+                document.getElementById('result-title').textContent = decodeURIComponent(title).replace(/_/g, ' ').replace(/\+/g, ' ');
                 renderQuestion();
 
             } catch (err) {
-                document.getElementById('loading').innerHTML = '<p class="text-sm text-red-500">Failed to load article. Please go back and try again.</p>';
+                document.getElementById('loading').innerHTML = '<p class="text-sm text-red-500 text-center mt-20">Failed to load article. Please go back and try again.</p>';
             }
         }
 
-        function generateQuestions(text) {
+        function generateQuestions(text, limit) {
             const sentences = text
                 .replace(/\n+/g, ' ')
                 .split(/(?<=[.?!])\s+/)
@@ -146,7 +183,7 @@
             const qs = [];
 
             for (const sentence of sentences) {
-                if (qs.length >= 10) break;
+                if (qs.length >= limit) break;
 
                 const words = sentence.match(/\b[A-Z][a-z]{3,}\b|\b\d{4}\b/g);
                 if (!words || words.length === 0) continue;
@@ -161,7 +198,6 @@
                 if (distractors.length < 3) continue;
 
                 const choices = [...distractors, answer].sort(() => Math.random() - 0.5);
-
                 qs.push({
                     question,
                     answer,
@@ -219,16 +255,12 @@
 
         function nextQuestion() {
             if (!selected) return;
-
             if (selected === questions[current].answer) score++;
-
             current++;
-
             if (current >= questions.length) {
                 showResults();
                 return;
             }
-
             renderQuestion();
         }
 
@@ -247,14 +279,18 @@
             score = 0;
             selected = null;
             document.getElementById('results-modal').classList.add('hidden');
-            renderQuestion();
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('setup-screen').classList.remove('hidden');
+            questionCount = null;
+            document.querySelectorAll('.count-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-700', 'text-white', 'border-slate-700');
+                btn.classList.add('border-gray-200', 'text-gray-600');
+            });
         }
 
         function exitQuiz() {
             window.location.href = '/';
         }
-
-        fetchAndGenerateQuiz();
     </script>
 
 
