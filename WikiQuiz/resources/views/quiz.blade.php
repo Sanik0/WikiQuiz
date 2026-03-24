@@ -12,7 +12,7 @@
 
     {{-- Navbar --}}
     <nav class="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
-        <a href="https://flowbite.com/" class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
             <svg fill="#45556C" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 137.177 137.177" xml:space="preserve">
 
                 <g id="SVGRepo_bgCarrier" stroke-width="0" />
@@ -523,11 +523,31 @@
 
         function selectAnswer(el, choice) {
             document.querySelectorAll('#choices button').forEach(btn => {
-                btn.classList.remove('border-slate-600', 'bg-slate-50', 'font-medium');
-                btn.classList.add('border-gray-200');
+                btn.disabled = true;
+                btn.onclick = null;
+                // remove hover classes so they dont interfere with the color feedback
+                btn.classList.remove('hover:border-slate-400', 'hover:bg-slate-50');
             });
-            el.classList.add('border-slate-600', 'bg-slate-50', 'font-medium');
-            el.classList.remove('border-gray-200');
+
+            const correct = questions[current].answer;
+            const isCorrect = choice === correct;
+
+            if (isCorrect) {
+                score++;
+                el.classList.remove('border-gray-200', 'text-gray-700');
+                el.classList.add('border-green-500', 'bg-green-50', 'text-green-700', 'font-medium');
+            } else {
+                el.classList.remove('border-gray-200', 'text-gray-700');
+                el.classList.add('border-red-400', 'bg-red-50', 'text-red-600', 'font-medium');
+
+                document.querySelectorAll('#choices button').forEach(btn => {
+                    if (btn.textContent.trim() === correct) {
+                        btn.classList.remove('border-gray-200', 'text-gray-700');
+                        btn.classList.add('border-green-500', 'bg-green-50', 'text-green-700', 'font-medium');
+                    }
+                });
+            }
+
             selected = choice;
             const nextBtn = document.getElementById('next-btn');
             nextBtn.disabled = false;
@@ -536,7 +556,6 @@
 
         function nextQuestion() {
             if (!selected) return;
-            if (selected === questions[current].answer) score++;
             current++;
             if (current >= questions.length) {
                 showResults();

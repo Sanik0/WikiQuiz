@@ -12,7 +12,7 @@
     <!-- NAVBAR -->
     <nav class="bg-neutral-primary bg-white fixed w-full z-20 top-0 start-0">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center gap-2">
+            <a href="/" class="flex items-center gap-2">
                 <svg fill="#45556C" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 137.177 137.177" xml:space="preserve">
 
                     <g id="SVGRepo_bgCarrier" stroke-width="0" />
