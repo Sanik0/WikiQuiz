@@ -58,7 +58,8 @@
                 <span class="self-center text-xl text-slate-600 font-semibold whitespace-nowrap">WikiQuiz</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
+                <button type="button" onclick="surpriseMe()" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
+
                 <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-md md:hidden hover:bg-neutral-secondary-soft hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -125,6 +126,22 @@
     </div>
 
     <script>
+        async function surpriseMe() {
+            const btn = document.querySelector('[onclick="surpriseMe()"]');
+            btn.textContent = 'Loading...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
+                const data = await res.json();
+                const title = data.title.replace(/ /g, '_');
+                window.location.href = '/article/' + encodeURIComponent(title);
+            } catch {
+                btn.textContent = 'Surprise Me';
+                btn.disabled = false;
+            }
+        }
+
         const title = "{{ $title }}";
         const formattedTitle = title.replace(/\+/g, '_').replace(/ /g, '_');
 

@@ -213,21 +213,64 @@
 
         function extractKeywords(text) {
             const years = [...new Set(text.match(/\b(1[0-9]{3}|20[0-9]{2})\b/g) || [])];
+
             const properNouns = [...new Set(
                 (text.match(/\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)+\b/g) || [])
                 .filter(n => n.split(' ').length >= 2)
             )];
+
             const nouns = [...new Set(
                 (text.match(/(?<=[a-z,;]\s)[A-Z][a-z]{3,}\b/g) || [])
             )];
+
             const numbers = [...new Set(
                 (text.match(/\b\d+(?:,\d+)?(?:\.\d+)?\b/g) || [])
             )];
+
+            // Countries and places
+            const places = [...new Set(
+                (text.match(/\b(?:in|at|from|near|to|of)\s([A-Z][a-z]+(?:\s[A-Z][a-z]+)*)\b/g) || [])
+                .map(p => p.replace(/^(?:in|at|from|near|to|of)\s/, ''))
+                .filter(p => p.length > 2)
+            )];
+
+            // Ages and durations
+            const ages = [...new Set(
+                (text.match(/\b(\d+)\s*(?:years?|months?|days?|weeks?|hours?|decades?)\b/g) || [])
+            )];
+
+            // Percentages
+            const percentages = [...new Set(
+                (text.match(/\b\d+(?:\.\d+)?%/g) || [])
+            )];
+
+            // Currencies
+            const currencies = [...new Set(
+                (text.match(/(?:\$|£|€)\s*\d+(?:[.,]\d+)*(?:\s*(?:million|billion|thousand))?/g) || [])
+            )];
+
+            // Ordinals — "first", "second", "third" etc
+            const ordinals = [...new Set(
+                (text.match(/\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth)\b/gi) || [])
+                .map(o => o.toLowerCase())
+            )];
+
+            // Roles and titles — "President", "Director", "CEO"
+            const roles = [...new Set(
+                (text.match(/\b(?:President|Prime Minister|Director|Secretary|General|Admiral|Captain|Governor|Senator|Minister|Chairman|CEO|CTO|Professor|Doctor|Mayor|Ambassador|Commander)\b/g) || [])
+            )];
+
             return {
                 years,
                 properNouns,
                 nouns,
-                numbers
+                numbers,
+                places,
+                ages,
+                percentages,
+                currencies,
+                ordinals,
+                roles
             };
         }
 
@@ -256,25 +299,72 @@
         }
 
         function tryBuildQuestion(sentence, allWords, usedAnswers) {
-            const patterns = [{
+            const patterns = [
+                // Years
+                {
                     regex: /\b(1[0-9]{3}|20[0-9]{2})\b/g,
                     type: 'year'
                 },
+
+                // Full proper noun phrases (multi-word names)
                 {
-                    regex: /\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)+)\b/g,
+                    regex: /\b([A-Z][a-z]+(?:\s[A-Z][a-z]+){1,3})\b/g,
                     type: 'proper_noun'
                 },
+
+                // Place after preposition — "born in Germany", "located in New York"
+                {
+                    regex: /\b(?:in|at|from|near|to|of)\s([A-Z][a-z]+(?:\s[A-Z][a-z]+)*)\b/g,
+                    type: 'place'
+                },
+
+                // Age / duration — "for 12 years", "after 3 months"
+                {
+                    regex: /\b(\d+)\s*(years?|months?|days?|weeks?|decades?)\b/g,
+                    type: 'age'
+                },
+
+                // Percentages
+                {
+                    regex: /\b(\d+(?:\.\d+)?%)/g,
+                    type: 'percentage'
+                },
+
+                // Currency amounts
+                {
+                    regex: /(?:\$|£|€)\s*\d+(?:[.,]\d+)*(?:\s*(?:million|billion|thousand))?/g,
+                    type: 'currency'
+                },
+
+                // Ordinal positions
+                {
+                    regex: /\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth)\b/gi,
+                    type: 'ordinal'
+                },
+
+                // Roles and titles
+                {
+                    regex: /\b(President|Prime Minister|Director|Secretary|General|Admiral|Captain|Governor|Senator|Minister|Chairman|CEO|Professor|Doctor|Mayor)\b/g,
+                    type: 'role'
+                },
+
+                // Single capitalized nouns (not sentence start)
                 {
                     regex: /(?<=[a-z,;]\s)([A-Z][a-z]{3,})\b/g,
                     type: 'noun'
                 },
+
+                // Plain numbers
                 {
-                    regex: /\b(\d+(?:,\d+)?(?:\.\d+)?)\s*(million|billion|thousand|percent|km|kg|mph|°)?\b/g,
+                    regex: /\b(\d+(?:,\d+)?(?:\.\d+)?)\b/g,
                     type: 'number'
-                }
+                },
             ];
 
-            for (const pattern of patterns) {
+            // Shuffle patterns so question types are varied
+            const shuffled = patterns.sort(() => Math.random() - 0.5);
+
+            for (const pattern of shuffled) {
                 const matches = [...sentence.matchAll(pattern.regex)];
                 if (matches.length === 0) continue;
 
@@ -283,6 +373,7 @@
 
                 if (usedAnswers.has(answer)) continue;
                 if (answer.length < 2) continue;
+                if (/^(the|a|an|and|or|of|in|at|to|for|is|was|are|were|it|he|she|they)$/i.test(answer)) continue;
 
                 const distractors = getDistractors(answer, pattern.type, allWords);
                 if (distractors.length < 3) continue;
@@ -306,31 +397,92 @@
                 years,
                 properNouns,
                 nouns,
-                numbers
+                numbers,
+                places,
+                ages,
+                percentages,
+                currencies,
+                ordinals,
+                roles
             } = allWords;
             let pool = [];
 
             if (type === 'year') {
                 const answerYear = parseInt(answer);
+
+                // First try real years from the article that are close
                 pool = years
                     .filter(y => y !== answer)
                     .sort((a, b) => Math.abs(parseInt(a) - answerYear) - Math.abs(parseInt(b) - answerYear))
                     .slice(0, 8);
+
+                // Always pad with nearby realistic years regardless
+                const offsets = [-1, 1, -2, 2, -3, 3, -5, 5, -7, 7, -10, 10];
+                for (const offset of offsets) {
+                    const fake = String(answerYear + offset);
+                    if (!pool.includes(fake) && fake !== answer) {
+                        pool.push(fake);
+                    }
+                    if (pool.length >= 8) break;
+                }
             } else if (type === 'proper_noun') {
                 const wordCount = answer.split(' ').length;
                 pool = properNouns
                     .filter(n => n !== answer && n.split(' ').length === wordCount)
                     .concat(properNouns.filter(n => n !== answer && n.split(' ').length !== wordCount));
+
+            } else if (type === 'place') {
+                pool = places
+                    .filter(p => p !== answer)
+                    .concat(properNouns.filter(n => n !== answer));
+
+            } else if (type === 'age') {
+                const num = parseInt(answer);
+                const unit = answer.replace(/\d+\s*/, '');
+                const offsets = [2, 5, 10, 15, 20, -2, -5, -10];
+                pool = offsets
+                    .map(o => `${Math.abs(num + o)} ${unit}`)
+                    .filter(a => a !== answer);
+
+            } else if (type === 'percentage') {
+                const num = parseFloat(answer);
+                pool = [
+                    `${Math.round(num * 0.5)}%`,
+                    `${Math.round(num * 1.5)}%`,
+                    `${Math.round(num * 2)}%`,
+                    `${Math.round(num + 10)}%`,
+                    `${Math.round(num - 10)}%`,
+                ].filter(p => p !== answer && parseFloat(p) >= 0);
+
+            } else if (type === 'currency') {
+                const symbol = answer.match(/\$|£|€/)?.[0] || '$';
+                const num = parseFloat(answer.replace(/[^0-9.]/g, ''));
+                const suffix = answer.match(/million|billion|thousand/)?.[0] || '';
+                pool = [
+                    `${symbol}${Math.round(num * 0.5)}${suffix ? ' ' + suffix : ''}`,
+                    `${symbol}${Math.round(num * 2)}${suffix ? ' ' + suffix : ''}`,
+                    `${symbol}${Math.round(num * 1.5)}${suffix ? ' ' + suffix : ''}`,
+                    `${symbol}${Math.round(num * 3)}${suffix ? ' ' + suffix : ''}`,
+                ].filter(c => c !== answer);
+
+            } else if (type === 'ordinal') {
+                const allOrdinals = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'];
+                pool = allOrdinals.filter(o => o !== answer.toLowerCase());
+
+            } else if (type === 'role') {
+                const allRoles = ['President', 'Prime Minister', 'Director', 'Secretary', 'General', 'Admiral', 'Governor', 'Senator', 'Chairman', 'CEO', 'Professor', 'Doctor', 'Mayor', 'Ambassador'];
+                pool = allRoles.filter(r => r !== answer);
+
             } else if (type === 'number') {
                 const num = parseFloat(answer.replace(/,/g, ''));
-                const suffix = answer.replace(/[\d.,]/g, '').trim();
                 pool = [
-                    Math.round(num * 0.5) + (suffix ? ' ' + suffix : ''),
-                    Math.round(num * 1.5) + (suffix ? ' ' + suffix : ''),
-                    Math.round(num * 2) + (suffix ? ' ' + suffix : ''),
-                    Math.round(num * 0.25) + (suffix ? ' ' + suffix : ''),
-                    Math.round(num + num * 0.1) + (suffix ? ' ' + suffix : ''),
-                ].filter(n => String(n) !== answer);
+                    String(Math.round(num * 0.5)),
+                    String(Math.round(num * 1.5)),
+                    String(Math.round(num * 2)),
+                    String(Math.round(num * 0.25)),
+                    String(Math.round(num + num * 0.1)),
+                ].filter(n => n !== answer);
+
             } else {
                 const answerLen = answer.length;
                 pool = nouns
@@ -341,6 +493,7 @@
 
             return pool.sort(() => Math.random() - 0.5).slice(0, 3);
         }
+        1
 
         function renderQuestion() {
             const q = questions[current];

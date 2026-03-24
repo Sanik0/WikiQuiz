@@ -12,7 +12,7 @@
     <!-- NAVBAR -->
     <nav class="bg-neutral-primary bg-white fixed w-full z-20 top-0 start-0">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center gap-2">
+            <a href="#" class="flex items-center gap-2">
                 <svg fill="#45556C" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 137.177 137.177" xml:space="preserve">
 
                     <g id="SVGRepo_bgCarrier" stroke-width="0" />
@@ -58,7 +58,7 @@
                 <span class="self-center text-xl text-slate-600 font-semibold whitespace-nowrap">WikiQuiz</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
+                <button type="button" onclick="surpriseMe()" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
                 <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-md md:hidden hover:bg-neutral-secondary-soft hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -115,6 +115,22 @@
             </form>
 
             <script>
+                async function surpriseMe() {
+                    const btn = document.querySelector('[onclick="surpriseMe()"]');
+                    btn.textContent = 'Loading...';
+                    btn.disabled = true;
+
+                    try {
+                        const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
+                        const data = await res.json();
+                        const title = data.title.replace(/ /g, '_');
+                        window.location.href = '/article/' + encodeURIComponent(title);
+                    } catch {
+                        btn.textContent = 'Surprise Me';
+                        btn.disabled = false;
+                    }
+                }
+
                 function handleSearch(e) {
                     e.preventDefault();
                     const input = document.getElementById('search').value.trim();
