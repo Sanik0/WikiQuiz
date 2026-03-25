@@ -8,23 +8,21 @@ Route::get('/', function () {
     $trending = [];
 
     try {
-        $yesterday = now()->subDay()->format('Y/m/d');
+        $date = now()->subDays(3)->format('Y/m/d');
 
         $response = Http::withHeaders([
             'User-Agent' => 'WikiQuiz/1.0 (contact@wikiquiz.com)'
-        ])->get("https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{$yesterday}");
+        ])->get("https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/{$date}");
 
         if ($response->ok()) {
             $articles = $response->json()['items'][0]['articles'] ?? [];
 
-            $filtered = array_filter(
-                $articles,
-                fn($a) =>
+            $filtered = array_filter($articles, fn($a) =>
                 !str_contains($a['article'], 'Main_Page') &&
-                    !str_contains($a['article'], 'Special:') &&
-                    !str_contains($a['article'], 'Wikipedia:') &&
-                    !str_contains($a['article'], 'Portal:') &&
-                    !str_contains($a['article'], 'File:')
+                !str_contains($a['article'], 'Special:') &&
+                !str_contains($a['article'], 'Wikipedia:') &&
+                !str_contains($a['article'], 'Portal:') &&
+                !str_contains($a['article'], 'File:')
             );
 
             foreach (array_slice(array_values($filtered), 0, 4) as $article) {
@@ -43,8 +41,7 @@ Route::get('/', function () {
                 ];
             }
         }
-    } catch (\Exception $e) {
-    }
+    } catch (\Exception $e) {}
 
     return view('index', ['trending' => $trending]);
 })->name('index');
