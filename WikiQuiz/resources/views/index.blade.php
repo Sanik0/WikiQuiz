@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/svg/logo.svg" type="image/svg+xml">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     @vite('resources/css/app.css')
 </head>
@@ -69,7 +70,7 @@
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-md bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
                     <li>
-                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
+                        <a href="" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                     </li>
                     <li>
                         <a href="#trending" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
@@ -120,30 +121,100 @@
                     'World_War_II', 'World_War_I', 'American_Civil_War', 'French_Revolution',
                     'Roman_Empire', 'Byzantine_Empire', 'Ottoman_Empire', 'Cold_War',
                     'Russian_Revolution', 'Napoleon', 'Alexander_the_Great', 'Julius_Caesar',
+                    'Ancient_Egypt', 'Ancient_Greece', 'Viking_Age', 'Medieval_Europe',
+                    'British_Empire', 'Mongol_Empire', 'Aztec_Empire', 'Inca_Empire',
+                    'Holocaust', 'Slavery_in_the_United_States', 'American_Revolution',
+                    'Industrial_Revolution', 'Space_Race', 'Vietnam_War', 'Korean_War',
+                    'Gulf_War', 'Cuban_Missile_Crisis', 'Berlin_Wall', 'Apartheid',
 
                     // Science
                     'Albert_Einstein', 'Isaac_Newton', 'Charles_Darwin', 'Stephen_Hawking',
                     'Black_hole', 'Evolution', 'DNA', 'Quantum_mechanics', 'Theory_of_relativity',
                     'Solar_System', 'Human_brain', 'Photosynthesis', 'Climate_change',
+                    'Periodic_table', 'Atom', 'Big_Bang', 'Gravity', 'Electromagnetism',
+                    'Thermodynamics', 'Cell_(biology)', 'Genetics', 'CRISPR', 'Vaccine',
+                    'Antibiotics', 'Stem_cell', 'Neuroscience', 'Psychology', 'Chemistry',
 
                     // Technology
                     'Internet', 'Artificial_intelligence', 'Computer', 'Smartphone',
                     'Space_exploration', 'Nuclear_power', 'Electricity', 'Telephone',
+                    'Cryptocurrency', 'Blockchain', 'Machine_learning', 'Robotics',
+                    'Social_media', 'Video_game', 'Television', 'Radio', 'Satellite',
+                    'Electric_vehicle', 'Solar_energy', 'Nuclear_weapon', '3D_printing',
+                    'Virtual_reality', 'Augmented_reality', 'Quantum_computing',
 
                     // Geography
                     'Amazon_rainforest', 'Sahara', 'Mount_Everest', 'Atlantic_Ocean',
                     'United_States', 'China', 'India', 'Brazil', 'Russia', 'Australia',
+                    'Africa', 'Europe', 'Asia', 'Antarctica', 'Arctic', 'Pacific_Ocean',
+                    'Nile', 'Amazon_river', 'Himalayas', 'Alps', 'Andes',
+                    'Great_Barrier_Reef', 'Yellowstone_National_Park', 'Grand_Canyon',
+                    'Sahel', 'Gobi_Desert', 'Siberia', 'Patagonia', 'Scandinavia',
+                    'Middle_East', 'Southeast_Asia', 'Caribbean', 'Mediterranean_Sea',
 
-                    // Culture
+                    // Countries
+                    'Japan', 'Germany', 'France', 'United_Kingdom', 'Italy', 'Canada',
+                    'Mexico', 'South_Korea', 'Indonesia', 'Pakistan', 'Nigeria', 'Egypt',
+                    'South_Africa', 'Argentina', 'Saudi_Arabia', 'Iran', 'Turkey',
+                    'Thailand', 'Vietnam', 'Philippines', 'Malaysia', 'Colombia', 'Peru',
+
+                    // Cities
+                    'New_York_City', 'London', 'Paris', 'Tokyo', 'Beijing', 'Mumbai',
+                    'Cairo', 'Istanbul', 'Los_Angeles', 'Chicago', 'Sydney', 'Toronto',
+                    'Berlin', 'Madrid', 'Rome', 'Moscow', 'Dubai', 'Singapore',
+                    'Bangkok', 'Seoul', 'Lagos', 'Nairobi', 'Buenos_Aires', 'São_Paulo',
+
+                    // Culture & Arts
                     'William_Shakespeare', 'Leonardo_da_Vinci', 'Beethoven', 'Mozart',
                     'The_Beatles', 'Michael_Jackson', 'Muhammad_Ali', 'Lionel_Messi',
+                    'Pablo_Picasso', 'Vincent_van_Gogh', 'Michelangelo', 'Rembrandt',
+                    'Walt_Disney', 'Steven_Spielberg', 'Stanley_Kubrick', 'Alfred_Hitchcock',
+                    'Bob_Dylan', 'Elvis_Presley', 'David_Bowie', 'Freddie_Mercury',
+                    'Hip_hop_music', 'Jazz', 'Classical_music', 'Rock_music', 'Opera',
 
-                    // Biology
+                    // Biology & Nature
                     'Human_body', 'Cancer', 'HIV/AIDS', 'Dinosaur', 'Shark', 'Elephant',
+                    'Tiger', 'Lion', 'Wolf', 'Eagle', 'Whale', 'Dolphin', 'Chimpanzee',
+                    'Coral_reef', 'Rainforest', 'Ocean', 'Ecosystem', 'Food_chain',
+                    'Bacteria', 'Virus', 'Fungi', 'Plant', 'Insect', 'Bird',
+                    'Human_evolution', 'Immune_system', 'Nervous_system', 'Heart',
 
                     // Space
                     'Moon', 'Mars', 'Jupiter', 'Milky_Way', 'International_Space_Station',
-                    'NASA', 'Apollo_11',
+                    'NASA', 'Apollo_11', 'Saturn', 'Venus', 'Mercury_(planet)', 'Neptune',
+                    'Uranus', 'Pluto', 'Asteroid', 'Comet', 'Supernova', 'Neutron_star',
+                    'Dark_matter', 'Dark_energy', 'Hubble_Space_Telescope', 'James_Webb_Space_Telescope',
+                    'SpaceX', 'Elon_Musk', 'Voyager_1',
+
+                    // Sports
+                    'FIFA_World_Cup', 'Olympic_Games', 'NBA', 'NFL', 'Formula_One',
+                    'Tennis', 'Cricket', 'Rugby_union', 'Baseball', 'Golf',
+                    'Cristiano_Ronaldo', 'LeBron_James', 'Michael_Jordan', 'Usain_Bolt',
+                    'Serena_Williams', 'Roger_Federer', 'Tiger_Woods', 'Michael_Phelps',
+
+                    // Philosophy & Religion
+                    'Philosophy', 'Plato', 'Aristotle', 'Socrates', 'Immanuel_Kant',
+                    'Friedrich_Nietzsche', 'Karl_Marx', 'Sigmund_Freud', 'Buddhism',
+                    'Christianity', 'Islam', 'Hinduism', 'Judaism', 'Atheism',
+
+                    // Economics & Politics
+                    'Capitalism', 'Communism', 'Democracy', 'Socialism', 'Globalization',
+                    'United_Nations', 'World_Trade_Organization', 'International_Monetary_Fund',
+                    'Stock_market', 'Inflation', 'Gross_domestic_product', 'Tax',
+
+                    // Food
+                    'Pizza', 'Sushi', 'Coffee', 'Wine', 'Beer', 'Chocolate', 'Bread',
+                    'Rice', 'Wheat', 'Agriculture', 'Cuisine', 'Fast_food',
+
+                    // Medicine
+                    'Diabetes', 'Alzheimer\'s_disease', 'Depression_(mood)', 'Anxiety',
+                    'COVID-19', 'Influenza', 'Malaria', 'Tuberculosis', 'Ebola',
+                    'Surgery', 'Pharmacology', 'Mental_health', 'Nutrition',
+
+                    // Literature & Film
+                    'Harry_Potter', 'The_Lord_of_the_Rings', 'Star_Wars', 'Marvel_Comics',
+                    'James_Bond', 'Sherlock_Holmes', 'Pride_and_Prejudice', 'Don_Quixote',
+                    'One_Thousand_and_One_Nights', 'Hamlet', 'The_Odyssey', 'The_Iliad',
                 ];
 
                 async function surpriseMe() {
@@ -656,12 +727,12 @@
             <h1 class="mb-6 text-4xl font-bold tracking-tighter text-slate-900 md:text-5xl lg:text-6xl">What will you learn today?</h1>
             <p class="mb-8 text-base font-normal text-slate-700 md:text-xl">Type any topic into the search bar, paste a Wikipedia link, or let us pick one for you. <br> Your next quiz is one search away.</p>
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 md:space-x-4">
-                <button type="button" class="inline-flex items-center justify-center text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium rounded-md text-base px-5 py-3 focus:outline-none">
-                    Pick a random article
+                <a href="https://www.wikipedia.org" type="button" class="inline-flex items-center justify-center text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium rounded-md text-base px-5 py-3 focus:outline-none">
+                    Search Wikipedia
                     <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
                     </svg>
-                </button>
+                </a>
                 <a href="#search" type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-slate-900 focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-md text-base px-5 py-3 focus:outline-none">Paste Link</a>
             </div>
         </div>
@@ -720,22 +791,22 @@
                 <div class="items-center justify-between w-full md:w-auto md:order-1">
                     <ul class="flex flex-wrap flex-row gap-2 md:gap-10">
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
+                            <a href="#search" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
+                            <a href="#trending" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
+                            <a href="#features" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
+                            <a href="#statistics" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
+                            <a href="#testimonials" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                            <a href="#contact" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
                         </li>
                     </ul>
                 </div>

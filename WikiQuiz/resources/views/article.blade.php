@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/svg/logo.svg" type="image/svg+xml">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     @vite('resources/css/app.css')
 </head>
@@ -59,7 +60,6 @@
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button type="button" onclick="surpriseMe()" class="text-white bg-slate-600 hover:bg-slate-700 box-border border border-transparent focus:ring-4 focus:ring-slate-500 shadow-xs font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">Surprise Me</button>
-
                 <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-md md:hidden hover:bg-neutral-secondary-soft hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -70,22 +70,22 @@
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-md bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 roundedhover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Paste-link</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                        <a href="/" class="block py-2 px-3 text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -126,20 +126,145 @@
     </div>
 
     <script>
-        async function surpriseMe() {
-            const btn = document.querySelector('[onclick="surpriseMe()"]');
-            btn.textContent = 'Loading...';
-            btn.disabled = true;
+        const TOPIC_POOLS = [
+            // History
+            'World_War_II', 'World_War_I', 'American_Civil_War', 'French_Revolution',
+            'Roman_Empire', 'Byzantine_Empire', 'Ottoman_Empire', 'Cold_War',
+            'Russian_Revolution', 'Napoleon', 'Alexander_the_Great', 'Julius_Caesar',
+            'Ancient_Egypt', 'Ancient_Greece', 'Viking_Age', 'Medieval_Europe',
+            'British_Empire', 'Mongol_Empire', 'Aztec_Empire', 'Inca_Empire',
+            'Holocaust', 'Slavery_in_the_United_States', 'American_Revolution',
+            'Industrial_Revolution', 'Space_Race', 'Vietnam_War', 'Korean_War',
+            'Gulf_War', 'Cuban_Missile_Crisis', 'Berlin_Wall', 'Apartheid',
 
+            // Science
+            'Albert_Einstein', 'Isaac_Newton', 'Charles_Darwin', 'Stephen_Hawking',
+            'Black_hole', 'Evolution', 'DNA', 'Quantum_mechanics', 'Theory_of_relativity',
+            'Solar_System', 'Human_brain', 'Photosynthesis', 'Climate_change',
+            'Periodic_table', 'Atom', 'Big_Bang', 'Gravity', 'Electromagnetism',
+            'Thermodynamics', 'Cell_(biology)', 'Genetics', 'CRISPR', 'Vaccine',
+            'Antibiotics', 'Stem_cell', 'Neuroscience', 'Psychology', 'Chemistry',
+
+            // Technology
+            'Internet', 'Artificial_intelligence', 'Computer', 'Smartphone',
+            'Space_exploration', 'Nuclear_power', 'Electricity', 'Telephone',
+            'Cryptocurrency', 'Blockchain', 'Machine_learning', 'Robotics',
+            'Social_media', 'Video_game', 'Television', 'Radio', 'Satellite',
+            'Electric_vehicle', 'Solar_energy', 'Nuclear_weapon', '3D_printing',
+            'Virtual_reality', 'Augmented_reality', 'Quantum_computing',
+
+            // Geography
+            'Amazon_rainforest', 'Sahara', 'Mount_Everest', 'Atlantic_Ocean',
+            'United_States', 'China', 'India', 'Brazil', 'Russia', 'Australia',
+            'Africa', 'Europe', 'Asia', 'Antarctica', 'Arctic', 'Pacific_Ocean',
+            'Nile', 'Amazon_river', 'Himalayas', 'Alps', 'Andes',
+            'Great_Barrier_Reef', 'Yellowstone_National_Park', 'Grand_Canyon',
+            'Sahel', 'Gobi_Desert', 'Siberia', 'Patagonia', 'Scandinavia',
+            'Middle_East', 'Southeast_Asia', 'Caribbean', 'Mediterranean_Sea',
+
+            // Countries
+            'Japan', 'Germany', 'France', 'United_Kingdom', 'Italy', 'Canada',
+            'Mexico', 'South_Korea', 'Indonesia', 'Pakistan', 'Nigeria', 'Egypt',
+            'South_Africa', 'Argentina', 'Saudi_Arabia', 'Iran', 'Turkey',
+            'Thailand', 'Vietnam', 'Philippines', 'Malaysia', 'Colombia', 'Peru',
+
+            // Cities
+            'New_York_City', 'London', 'Paris', 'Tokyo', 'Beijing', 'Mumbai',
+            'Cairo', 'Istanbul', 'Los_Angeles', 'Chicago', 'Sydney', 'Toronto',
+            'Berlin', 'Madrid', 'Rome', 'Moscow', 'Dubai', 'Singapore',
+            'Bangkok', 'Seoul', 'Lagos', 'Nairobi', 'Buenos_Aires', 'São_Paulo',
+
+            // Culture & Arts
+            'William_Shakespeare', 'Leonardo_da_Vinci', 'Beethoven', 'Mozart',
+            'The_Beatles', 'Michael_Jackson', 'Muhammad_Ali', 'Lionel_Messi',
+            'Pablo_Picasso', 'Vincent_van_Gogh', 'Michelangelo', 'Rembrandt',
+            'Walt_Disney', 'Steven_Spielberg', 'Stanley_Kubrick', 'Alfred_Hitchcock',
+            'Bob_Dylan', 'Elvis_Presley', 'David_Bowie', 'Freddie_Mercury',
+            'Hip_hop_music', 'Jazz', 'Classical_music', 'Rock_music', 'Opera',
+
+            // Biology & Nature
+            'Human_body', 'Cancer', 'HIV/AIDS', 'Dinosaur', 'Shark', 'Elephant',
+            'Tiger', 'Lion', 'Wolf', 'Eagle', 'Whale', 'Dolphin', 'Chimpanzee',
+            'Coral_reef', 'Rainforest', 'Ocean', 'Ecosystem', 'Food_chain',
+            'Bacteria', 'Virus', 'Fungi', 'Plant', 'Insect', 'Bird',
+            'Human_evolution', 'Immune_system', 'Nervous_system', 'Heart',
+
+            // Space
+            'Moon', 'Mars', 'Jupiter', 'Milky_Way', 'International_Space_Station',
+            'NASA', 'Apollo_11', 'Saturn', 'Venus', 'Mercury_(planet)', 'Neptune',
+            'Uranus', 'Pluto', 'Asteroid', 'Comet', 'Supernova', 'Neutron_star',
+            'Dark_matter', 'Dark_energy', 'Hubble_Space_Telescope', 'James_Webb_Space_Telescope',
+            'SpaceX', 'Elon_Musk', 'Voyager_1',
+
+            // Sports
+            'FIFA_World_Cup', 'Olympic_Games', 'NBA', 'NFL', 'Formula_One',
+            'Tennis', 'Cricket', 'Rugby_union', 'Baseball', 'Golf',
+            'Cristiano_Ronaldo', 'LeBron_James', 'Michael_Jordan', 'Usain_Bolt',
+            'Serena_Williams', 'Roger_Federer', 'Tiger_Woods', 'Michael_Phelps',
+
+            // Philosophy & Religion
+            'Philosophy', 'Plato', 'Aristotle', 'Socrates', 'Immanuel_Kant',
+            'Friedrich_Nietzsche', 'Karl_Marx', 'Sigmund_Freud', 'Buddhism',
+            'Christianity', 'Islam', 'Hinduism', 'Judaism', 'Atheism',
+
+            // Economics & Politics
+            'Capitalism', 'Communism', 'Democracy', 'Socialism', 'Globalization',
+            'United_Nations', 'World_Trade_Organization', 'International_Monetary_Fund',
+            'Stock_market', 'Inflation', 'Gross_domestic_product', 'Tax',
+
+            // Food
+            'Pizza', 'Sushi', 'Coffee', 'Wine', 'Beer', 'Chocolate', 'Bread',
+            'Rice', 'Wheat', 'Agriculture', 'Cuisine', 'Fast_food',
+
+            // Medicine
+            'Diabetes', 'Alzheimer\'s_disease', 'Depression_(mood)', 'Anxiety',
+            'COVID-19', 'Influenza', 'Malaria', 'Tuberculosis', 'Ebola',
+            'Surgery', 'Pharmacology', 'Mental_health', 'Nutrition',
+
+            // Literature & Film
+            'Harry_Potter', 'The_Lord_of_the_Rings', 'Star_Wars', 'Marvel_Comics',
+            'James_Bond', 'Sherlock_Holmes', 'Pride_and_Prejudice', 'Don_Quixote',
+            'One_Thousand_and_One_Nights', 'Hamlet', 'The_Odyssey', 'The_Iliad',
+        ];
+
+        async function surpriseMe() {
             try {
+                const title = await getValidRandomArticle();
+                window.location.href = '/article/' + encodeURIComponent(title);
+            } catch (e) {
+                console.error(e);
+                alert('Could not find a suitable article. Please try again.');
+            }
+        }
+
+        async function getValidRandomArticle(attempts = 0) {
+            if (attempts > 15) throw new Error('Too many attempts');
+
+            // 50/50 chance — either pick from curated pool or try truly random
+            const useCurated = Math.random() > 0.5;
+
+            let title;
+
+            if (useCurated) {
+                title = TOPIC_POOLS[Math.floor(Math.random() * TOPIC_POOLS.length)];
+            } else {
                 const res = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
                 const data = await res.json();
-                const title = data.title.replace(/ /g, '_');
-                window.location.href = '/article/' + encodeURIComponent(title);
-            } catch {
-                btn.textContent = 'Surprise Me';
-                btn.disabled = false;
+                title = (data.title || '').replace(/ /g, '_');
+
+                if (
+                    !data.extract ||
+                    data.extract.length < 3000 ||
+                    data.type === 'disambiguation' ||
+                    title.includes('&') ||
+                    title.includes('#') ||
+                    title.includes('%')
+                ) {
+                    return getValidRandomArticle(attempts + 1);
+                }
             }
+
+            return title;
         }
 
         const title = "{{ $title }}";
