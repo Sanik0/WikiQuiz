@@ -7,6 +7,7 @@
     <link rel="icon" href="/svg/logo.svg" type="image/svg+xml">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     @vite('resources/css/app.css')
+    <title>WikiQuiz</title>
 </head>
 
 <body>
@@ -614,13 +615,13 @@
                 </div>
 
                 <div class="text-center">
-                    <p class="text-3xl font-bold text-slate-900">1000s</p>
+                    <p class="text-3xl font-bold text-slate-900">1000+</p>
                     <p class="text-md text-slate-500 mt-1">Topics to quiz on</p>
                 </div>
 
                 <div class="text-center">
-                    <p class="text-3xl font-bold text-slate-900">3</p>
-                    <p class="text-md text-slate-500 mt-1">Question types</p>
+                    <p class="text-3xl font-bold text-slate-900">100+</p>
+                    <p class="text-md text-slate-500 mt-1">Category</p>
                 </div>
 
                 <div class="text-center">

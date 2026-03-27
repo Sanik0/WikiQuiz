@@ -359,22 +359,22 @@
                 <div class="items-center justify-between w-full md:w-auto md:order-1">
                     <ul class="flex flex-wrap flex-row gap-2 md:gap-10">
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Home</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Trending</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Features</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Statistics</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Testimonials</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
+                            <a href="/" class="block py-2 px-3 font-semibold text-slate-900 rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-slate-600 md:p-0 md:dark:hover:bg-transparent">Contact</a>
                         </li>
                     </ul>
                 </div>
