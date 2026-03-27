@@ -1,6 +1,7 @@
 {
     "version": 2,
     "framework": null,
+    "outputDirectory": "public",
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.1"
@@ -11,5 +12,17 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
-    ]
+    ],
+    "env": {
+        "APP_NAME": "Laravel",
+        "APP_ENV": "production",
+        "APP_KEY": "base64:EM3XVFXa/cSKFDwLJNFWNTuh6d8/wnXL204kpNjY3bE=",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://wikiquiz-mqf134flm-ronan-sanicos-projects.vercel.app",
+        "LOG_CHANNEL": "stderr",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "CACHE_STORE": "array",
+        "SESSION_DRIVER": "cookie",
+        "QUEUE_CONNECTION": "sync"
+    }
 }
