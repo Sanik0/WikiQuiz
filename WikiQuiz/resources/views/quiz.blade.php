@@ -4,6 +4,7 @@
 <head>
     <title>WikiQuiz</title>
     <meta charset="utf-8" />
+    <link rel="icon" href="/svg/logo.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
     @vite('resources/css/app.css')
