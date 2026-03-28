@@ -4,7 +4,7 @@
 
 WikiQuiz is a free, open-source quiz tool that generates questions directly from Wikipedia articles. No AI, no accounts, no paywalls — just pure, sourced knowledge turned into interactive quizzes.
 
-![WikiQuiz Homepage](screenshots/homepage.jpg)
+![WikiQuiz Homepage](Wikiquiz/Wikiquiz/screenshots/homepage.jpg)
 
 ---
 
@@ -25,16 +25,16 @@ WikiQuiz is a free, open-source quiz tool that generates questions directly from
 ## Screenshots
 
 ### Homepage
-![Homepage](screenshots/homepage.png)
+![Homepage](Wikiquiz/screenshots/homepagemobile.jpg)
 
 ### Article Preview
-![Article Page](screenshots/article.png)
+![Article Page](Wikiquiz/screenshots/article.jpg)
 
 ### Quiz Page
-![Quiz Page](screenshots/quiz.png)
+![Quiz Page](Wikiquiz/screenshots/quiz.jpg)
 
 ### Quiz Results
-![Results Modal](screenshots/results.png)
+![Results Modal](Wikiquiz/screenshots/results.jpg)
 
 ---
 
